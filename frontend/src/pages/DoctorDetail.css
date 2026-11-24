@@ -2,7 +2,24 @@
 .doctor-detail__hero {
   background: var(--gray-900); padding: 2.5rem 0;
 }
-[data-theme="dark"] .doctor-detail__hero { background: #0f172a; border-bottom: 1px solid var(--border-color); }
+[data-theme="dark"] .doctor-detail__hero {
+  background: linear-gradient(135deg, #450308 0%, #150205 100%);
+  border-bottom: 1px solid rgba(245, 242, 235, 0.1);
+}
+[data-theme="dark"] .doctor-detail__avatar {
+  background: var(--primary);
+  box-shadow: 0 0 25px rgba(220, 20, 36, 0.5);
+}
+[data-theme="dark"] .booking-card__header {
+  background: linear-gradient(135deg, #6e0811 0%, #290307 100%);
+  border-bottom: 1px solid rgba(245, 242, 235, 0.1);
+}
+[data-theme="dark"] .slot-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #f5f2eb;
+  box-shadow: 0 0 12px rgba(220, 20, 36, 0.45);
+}
 
 .doctor-detail__profile { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .doctor-detail__avatar {

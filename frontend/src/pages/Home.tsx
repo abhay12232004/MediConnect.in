@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import DoctorCard from '../components/common/DoctorCard';
 import TourGuide from '../components/common/TourGuide';
+import InteractiveFeatureShowcase from '../components/common/InteractiveFeatureShowcase';
 import { Doctor } from '../types';
 import './Home.css';
 
@@ -32,20 +33,23 @@ const Home: React.FC = () => {
           <div className="hero__shape hero__shape--3" />
         </div>
         <div className="container">
-          <div className="hero__content animate-fade-in">
-            <div className="hero__eyebrow">India's Trusted Healthcare Platform</div>
-            <h1 className="hero__title">
-              Find & Book <span className="gradient-text">Top Doctors</span><br/>
+          <div className="hero__content">
+            <div className="hero__eyebrow hero-animate-1">
+              <span className="hero__eyebrow-dot" />
+              <span>India's Trusted Healthcare Platform</span>
+            </div>
+            <h1 className="hero__title hero-animate-2">
+              Find & Book <span className="gradient-text hero__highlight">Top Doctors</span><br/>
               Near You, Instantly
             </h1>
-            <p className="hero__subtitle">
+            <p className="hero__subtitle hero-animate-3">
               Connect with verified specialists across India. Book appointments online, get real-time updates, and manage your health journey all in one place.
             </p>
-            <div className="hero__actions">
+            <div className="hero__actions hero-animate-4">
               <Link to="/doctors" className="btn btn-primary btn-lg">Find a Doctor</Link>
               {!user && <Link to="/register" className="btn btn-outline btn-lg">Register Free</Link>}
             </div>
-            <div className="hero__stats">
+            <div className="hero__stats hero-animate-5">
               <div className="hero__stat"><span className="hero__stat-num">500+</span><span>Doctors</span></div>
               <div className="hero__stat-divider" />
               <div className="hero__stat"><span className="hero__stat-num">10k+</span><span>Patients</span></div>
@@ -61,9 +65,12 @@ const Home: React.FC = () => {
               <span>!</span><span>Real-time Updates</span>
             </div>
             <div className="hero__illustration">
-              <div className="hero__pulse-ring" />
+              <div className="hero__pulse-ring hero__pulse-ring--inner" />
+              <div className="hero__pulse-ring hero__pulse-ring--outer" />
               <div className="hero__center-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
               </div>
             </div>
           </div>
@@ -90,30 +97,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="features section">
-        <div className="container">
-          <h2 className="section__title">Why Choose <span style={{color:'#60a5fa'}}>MediConnect</span></h2>
-          <div className="grid-3">
-            {[
-              { title: 'Instant Booking', desc: 'Book appointments in under 60 seconds. No phone calls, no waiting.' },
-              { title: 'Real-time Updates', desc: 'Get instant notifications when your appointment is confirmed or updated.' },
-              { title: 'Secure & Private', desc: 'Protected data, role-based access, and encrypted medical records.' },
-              { title: 'Verified Doctors', desc: 'Every doctor is manually verified and approved by our admin team.' },
-              { title: 'Digital Prescriptions', desc: 'Receive prescriptions digitally after your consultation.' },
-              { title: 'Dark Mode', desc: 'Easy on the eyes — toggle between light and dark mode anytime.' },
-            ].map((f, i) => (
-              <div key={f.title} className="feature-card animate-fade-in" style={{ animationDelay: `${i * 0.08}s` }}>
-                <div className="feature-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <h3 className="feature-card__title">{f.title}</h3>
-                <p className="feature-card__desc">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Interactive 3D Rolling & Infinite Loop Features Showcase */}
+      <InteractiveFeatureShowcase />
 
       {/* Featured Doctors */}
       <section className="featured-doctors section">

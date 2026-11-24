@@ -2,7 +2,10 @@
 .admin-hero {
   background: var(--gray-900); padding: 2.5rem 0; text-align: center; color: #f1f5f9;
 }
-[data-theme="dark"] .admin-hero { background: #0f172a; border-bottom: 1px solid var(--border-color); }
+[data-theme="dark"] .admin-hero {
+  background: linear-gradient(135deg, #450308 0%, #150205 100%);
+  border-bottom: 1px solid rgba(245, 242, 235, 0.1);
+}
 .admin-hero h1 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.03em; }
 .admin-hero p { color: #94a3b8; font-size: 0.9375rem; }
 

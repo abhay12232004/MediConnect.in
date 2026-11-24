@@ -2,7 +2,13 @@
 .dashboard-hero {
   background: var(--gray-900); padding: 2rem 0;
 }
-[data-theme="dark"] .dashboard-hero { background: #0f172a; border-bottom: 1px solid var(--border-color); }
+[data-theme="dark"] .dashboard-hero {
+  background: linear-gradient(135deg, #450308 0%, #150205 100%);
+  border-bottom: 1px solid rgba(245, 242, 235, 0.1);
+}
+[data-theme="dark"] .dashboard-hero__avatar {
+  box-shadow: 0 0 20px rgba(220, 20, 36, 0.45);
+}
 
 .dashboard-hero .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .dashboard-hero__content { display: flex; align-items: center; gap: 1rem; }

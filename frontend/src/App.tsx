@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { SocketProvider } from './context/SocketContext';
 import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 import Toast from './components/common/Toast';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import Home from './pages/Home';
@@ -50,6 +51,7 @@ const AppContent = () => {
           <Route path="/admin" element={<ProtectedRoute roles={['admin']}><AdminPanel /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </SocketProvider>
   );
